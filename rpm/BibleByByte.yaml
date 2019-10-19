@@ -1,11 +1,11 @@
-Name: LeitnerLearner
+Name: BibleByByte
 Summary: Sailfish application for memorization through the Leitner system
 Version: 0.1
 Release: 1
 # The contents of the Group field should be one of the groups listed here:
 # https://github.com/mer-tools/spectacle/blob/master/data/GROUPS
 Group: Qt/Qt
-URL: https://github.com/markuspg/LeitnerLearner
+URL: https://github.com/markuspg/BibleByByte
 License: GPLv3
 # This must be generated before uploading a package to a remote build service.
 # Usually this line does not need to be modified.

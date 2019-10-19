@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - QML based application for Sailfish OS
 
 ### Changed
+- application name from LeitnerLearner to BibleByByte
 - backport to C++11 since Sailfish OS (as of 3.0.3)  does not support C++17 yet
 - identify stored bible verses by their technical title
 
@@ -24,5 +25,5 @@ First public release!
 - Qt Widgets application for learning bible verses by a modified version of the Leitner system
 
 
-[Unreleased]: https://github.com/markuspg/LeitnerLearner/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/markuspg/LeitnerLearner/releases/tag/v1.0.0
+[Unreleased]: https://github.com/markuspg/BibleByByte/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/markuspg/BibleByByte/releases/tag/v1.0.0

@@ -3,7 +3,7 @@
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
   <property name="windowTitle">
-   <string>LeitnerLearner</string>
+   <string>BibleByByte</string>
   </property>
   <widget class="QWidget" name="MWCentralwidget">
    <layout class="QVBoxLayout" name="VLCentralWidget">

@@ -1,20 +1,20 @@
 /*
  * Copyright 2019 Markus Prasser
  *
- * This file is part of LeitnerLearner.
+ * This file is part of BibleByByte.
  *
- *  LeitnerLearner is free software: you can redistribute it and/or modify
+ *  BibleByByte is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  LeitnerLearner is distributed in the hope that it will be useful,
+ *  BibleByByte is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with LeitnerLearner.  If not, see <http://www.gnu.org/licenses/>.
+ *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #ifdef QML_APP
@@ -49,7 +49,7 @@
 int main(int argc, char *argv[]) {
 #ifdef WIDGETS_APP
     QApplication app{argc, argv};
-    app.setApplicationName("LeitnerLearner");
+    app.setApplicationName("BibleByByte");
 #endif // WIDGETS_APP
 #ifdef QML_APP
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
@@ -68,9 +68,9 @@ int main(int argc, char *argv[]) {
     }
 
 #ifdef QML_APP
-    qmlRegisterType<Backend>("com.github.leitnerlearner.backend", 1, 0, "Backend");
+    qmlRegisterType<Backend>("com.github.biblebybyte.backend", 1, 0, "Backend");
 
-    view->setSource(SailfishApp::pathTo("qml/LeitnerLearner.qml"));
+    view->setSource(SailfishApp::pathTo("qml/BibleByByte.qml"));
     view->show();
 
     return app->exec();

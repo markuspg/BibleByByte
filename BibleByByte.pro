@@ -1,4 +1,4 @@
-TARGET = LeitnerLearner
+TARGET = BibleByByte
 
 CONFIG += sailfishapp c++11
 
@@ -35,16 +35,16 @@ SOURCES += \
     src/modules/songVerse/songverse.cpp \
 
 DISTFILES += \
-    LeitnerLearner.desktop \
-    qml/LeitnerLearner.qml \
+    BibleByByte.desktop \
+    qml/BibleByByte.qml \
     qml/cover/CoverPage.qml \
     qml/pages/ModeChooser.qml \
     qml/pages/VerseCheck.qml \
     qml/pages/VerseEntry.qml \
-    rpm/LeitnerLearner.changes.in \
-    rpm/LeitnerLearner.changes.run.in \
-    rpm/LeitnerLearner.spec \
-    rpm/LeitnerLearner.yaml \
+    rpm/BibleByByte.changes.in \
+    rpm/BibleByByte.changes.run.in \
+    rpm/BibleByByte.spec \
+    rpm/BibleByByte.yaml \
     translations/*.ts \
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
@@ -53,4 +53,4 @@ SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 # following CONFIG line
 CONFIG += sailfishapp_i18n
 
-TRANSLATIONS += translations/LeitnerLearner-de.ts
+TRANSLATIONS += translations/BibleByByte-de.ts

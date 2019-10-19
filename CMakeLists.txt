@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.7.2 FATAL_ERROR)
 
-project(LeitnerLearner
+project(BibleByByte
     VERSION 1.0
     LANGUAGES CXX)
 
@@ -14,7 +14,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-add_executable(leitner_learner
+add_executable(bible_by_byte
     src/abstractcheckwdgt.cpp
     src/abstractdatachecker.cpp
     src/abstractdatachecker.ui
@@ -47,7 +47,7 @@ add_executable(leitner_learner
     src/modules/songVerse/songverseentry.cpp
     src/modules/songVerse/songverseentrywdgt.cpp
     src/modules/songVerse/songverseentrywdgt.ui)
-target_compile_definitions(leitner_learner PRIVATE WIDGETS_APP)
-target_link_libraries(leitner_learner PRIVATE Qt5::Widgets)
+target_compile_definitions(bible_by_byte PRIVATE WIDGETS_APP)
+target_link_libraries(bible_by_byte PRIVATE Qt5::Widgets)
 
 add_subdirectory(tests)
