@@ -5,437 +5,437 @@
     <name>AbstractDataChecker</name>
     <message>
         <source>Abstract Data Checker</source>
-        <translation type="unfinished"></translation>
+        <translation>Abstract Data Checker</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Show</translation>
     </message>
     <message>
         <source>Correct</source>
-        <translation type="unfinished"></translation>
+        <translation>Correct</translation>
     </message>
     <message>
         <source>Wrong</source>
-        <translation type="unfinished"></translation>
+        <translation>Wrong</translation>
     </message>
 </context>
 <context>
     <name>AbstractDataEntry</name>
     <message>
         <source>Abstract Data Entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Abstract Data Entry</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Add</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>My Cover</source>
-        <translation type="unfinished"></translation>
+        <translation>My Cover</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>BibleByByte</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleByByte</translation>
     </message>
     <message>
         <source>Check</source>
-        <translation type="unfinished"></translation>
+        <translation>Check</translation>
     </message>
     <message>
         <source>Enter</source>
-        <translation type="unfinished"></translation>
+        <translation>Enter</translation>
     </message>
 </context>
 <context>
     <name>ModeChooser</name>
     <message>
         <source>Check Verses</source>
-        <translation type="unfinished"></translation>
+        <translation>Check Verses</translation>
     </message>
     <message>
         <source>Enter Verses</source>
-        <translation type="unfinished"></translation>
+        <translation>Enter Verses</translation>
     </message>
 </context>
 <context>
     <name>SongVerseCheckWdgt</name>
     <message>
         <source>Song Verse Check</source>
-        <translation type="unfinished"></translation>
+        <translation>Song Verse Check</translation>
     </message>
     <message>
         <source>Song Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Song Name</translation>
     </message>
     <message>
         <source>Verse No.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verse No.</translation>
     </message>
 </context>
 <context>
     <name>SongVerseEntryWdgt</name>
     <message>
         <source>Song Verse Entry Widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Song Verse Entry Widget</translation>
     </message>
     <message>
         <source>Song Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Song Name</translation>
     </message>
     <message>
         <source>Verse No.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verse No.</translation>
     </message>
 </context>
 <context>
     <name>VerseCheck</name>
     <message>
         <source>Verse Check</source>
-        <translation type="unfinished"></translation>
+        <translation>Verse Check</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Show</translation>
     </message>
     <message>
         <source>Correct</source>
-        <translation type="unfinished"></translation>
+        <translation>Correct</translation>
     </message>
     <message>
         <source>Wrong</source>
-        <translation type="unfinished"></translation>
+        <translation>Wrong</translation>
     </message>
 </context>
 <context>
     <name>VerseCheckWdgt</name>
     <message>
         <source>Verse Check</source>
-        <translation type="unfinished"></translation>
+        <translation>Verse Check</translation>
     </message>
     <message>
         <source>Book</source>
-        <translation type="unfinished"></translation>
+        <translation>Book</translation>
     </message>
     <message>
         <source>Chapter</source>
-        <translation type="unfinished"></translation>
+        <translation>Chapter</translation>
     </message>
     <message>
         <source>Verse</source>
-        <translation type="unfinished"></translation>
+        <translation>Verse</translation>
     </message>
 </context>
 <context>
     <name>VerseEntry</name>
     <message>
         <source>Verse Entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Verse Entry</translation>
     </message>
     <message>
         <source>Genesis</source>
-        <translation type="unfinished"></translation>
+        <translation>Genesis</translation>
     </message>
     <message>
         <source>Exodus</source>
-        <translation type="unfinished"></translation>
+        <translation>Exodus</translation>
     </message>
     <message>
         <source>Leviticus</source>
-        <translation type="unfinished"></translation>
+        <translation>Leviticus</translation>
     </message>
     <message>
         <source>Numbers</source>
-        <translation type="unfinished"></translation>
+        <translation>Numbers</translation>
     </message>
     <message>
         <source>Deuteronomy</source>
-        <translation type="unfinished"></translation>
+        <translation>Deuteronomy</translation>
     </message>
     <message>
         <source>Joshua</source>
-        <translation type="unfinished"></translation>
+        <translation>Joshua</translation>
     </message>
     <message>
         <source>Judges</source>
-        <translation type="unfinished"></translation>
+        <translation>Judges</translation>
     </message>
     <message>
         <source>Ruth</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruth</translation>
     </message>
     <message>
         <source>1 Samuel</source>
-        <translation type="unfinished"></translation>
+        <translation>1 Samuel</translation>
     </message>
     <message>
         <source>2 Samuel</source>
-        <translation type="unfinished"></translation>
+        <translation>2 Samuel</translation>
     </message>
     <message>
         <source>1 Kings</source>
-        <translation type="unfinished"></translation>
+        <translation>1 Kings</translation>
     </message>
     <message>
         <source>2 Kings</source>
-        <translation type="unfinished"></translation>
+        <translation>2 Kings</translation>
     </message>
     <message>
         <source>1 Chronicles</source>
-        <translation type="unfinished"></translation>
+        <translation>1 Chronicles</translation>
     </message>
     <message>
         <source>2 Chronicles</source>
-        <translation type="unfinished"></translation>
+        <translation>2 Chronicles</translation>
     </message>
     <message>
         <source>Ezra</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezra</translation>
     </message>
     <message>
         <source>Nehemiah</source>
-        <translation type="unfinished"></translation>
+        <translation>Nehemiah</translation>
     </message>
     <message>
         <source>Esther</source>
-        <translation type="unfinished"></translation>
+        <translation>Esther</translation>
     </message>
     <message>
         <source>Job</source>
-        <translation type="unfinished"></translation>
+        <translation>Job</translation>
     </message>
     <message>
         <source>Psalms</source>
-        <translation type="unfinished"></translation>
+        <translation>Psalms</translation>
     </message>
     <message>
         <source>Proverbs</source>
-        <translation type="unfinished"></translation>
+        <translation>Proverbs</translation>
     </message>
     <message>
         <source>Ecclesiastes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ecclesiastes</translation>
     </message>
     <message>
         <source>Song of Solomon</source>
-        <translation type="unfinished"></translation>
+        <translation>Song of Solomon</translation>
     </message>
     <message>
         <source>Isaiah</source>
-        <translation type="unfinished"></translation>
+        <translation>Isaiah</translation>
     </message>
     <message>
         <source>Jeremiah</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeremiah</translation>
     </message>
     <message>
         <source>Lamentations</source>
-        <translation type="unfinished"></translation>
+        <translation>Lamentations</translation>
     </message>
     <message>
         <source>Ezekiel</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezekiel</translation>
     </message>
     <message>
         <source>Daniel</source>
-        <translation type="unfinished"></translation>
+        <translation>Daniel</translation>
     </message>
     <message>
         <source>Hosea</source>
-        <translation type="unfinished"></translation>
+        <translation>Hosea</translation>
     </message>
     <message>
         <source>Joel</source>
-        <translation type="unfinished"></translation>
+        <translation>Joel</translation>
     </message>
     <message>
         <source>Amos</source>
-        <translation type="unfinished"></translation>
+        <translation>Amos</translation>
     </message>
     <message>
         <source>Obadiah</source>
-        <translation type="unfinished"></translation>
+        <translation>Obadiah</translation>
     </message>
     <message>
         <source>Jonah</source>
-        <translation type="unfinished"></translation>
+        <translation>Jonah</translation>
     </message>
     <message>
         <source>Micah</source>
-        <translation type="unfinished"></translation>
+        <translation>Micah</translation>
     </message>
     <message>
         <source>Nahum</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahum</translation>
     </message>
     <message>
         <source>Habbakuk</source>
-        <translation type="unfinished"></translation>
+        <translation>Habbakuk</translation>
     </message>
     <message>
         <source>Zephaniah</source>
-        <translation type="unfinished"></translation>
+        <translation>Zephaniah</translation>
     </message>
     <message>
         <source>Haggai</source>
-        <translation type="unfinished"></translation>
+        <translation>Haggai</translation>
     </message>
     <message>
         <source>Zechariah</source>
-        <translation type="unfinished"></translation>
+        <translation>Zechariah</translation>
     </message>
     <message>
         <source>Malachi</source>
-        <translation type="unfinished"></translation>
+        <translation>Malachi</translation>
     </message>
     <message>
         <source>Matthew</source>
-        <translation type="unfinished"></translation>
+        <translation>Matthew</translation>
     </message>
     <message>
         <source>Mark</source>
-        <translation type="unfinished"></translation>
+        <translation>Mark</translation>
     </message>
     <message>
         <source>Luke</source>
-        <translation type="unfinished"></translation>
+        <translation>Luke</translation>
     </message>
     <message>
         <source>John</source>
-        <translation type="unfinished"></translation>
+        <translation>John</translation>
     </message>
     <message>
         <source>Acts</source>
-        <translation type="unfinished"></translation>
+        <translation>Acts</translation>
     </message>
     <message>
         <source>Romans</source>
-        <translation type="unfinished"></translation>
+        <translation>Romans</translation>
     </message>
     <message>
         <source>1 Corinthians</source>
-        <translation type="unfinished"></translation>
+        <translation>1 Corinthians</translation>
     </message>
     <message>
         <source>2 Corinthians</source>
-        <translation type="unfinished"></translation>
+        <translation>2 Corinthians</translation>
     </message>
     <message>
         <source>Galatians</source>
-        <translation type="unfinished"></translation>
+        <translation>Galatians</translation>
     </message>
     <message>
         <source>Ephesians</source>
-        <translation type="unfinished"></translation>
+        <translation>Ephesians</translation>
     </message>
     <message>
         <source>Philippians</source>
-        <translation type="unfinished"></translation>
+        <translation>Philippians</translation>
     </message>
     <message>
         <source>Colossians</source>
-        <translation type="unfinished"></translation>
+        <translation>Colossians</translation>
     </message>
     <message>
         <source>1 Thessalonians</source>
-        <translation type="unfinished"></translation>
+        <translation>1 Thessalonians</translation>
     </message>
     <message>
         <source>2 Thessalonians</source>
-        <translation type="unfinished"></translation>
+        <translation>2 Thessalonians</translation>
     </message>
     <message>
         <source>1 Timothy</source>
-        <translation type="unfinished"></translation>
+        <translation>1 Timothy</translation>
     </message>
     <message>
         <source>2 Timothy</source>
-        <translation type="unfinished"></translation>
+        <translation>2 Timothy</translation>
     </message>
     <message>
         <source>Titus</source>
-        <translation type="unfinished"></translation>
+        <translation>Titus</translation>
     </message>
     <message>
         <source>Philemon</source>
-        <translation type="unfinished"></translation>
+        <translation>Philemon</translation>
     </message>
     <message>
         <source>Hebrews</source>
-        <translation type="unfinished"></translation>
+        <translation>Hebrews</translation>
     </message>
     <message>
         <source>James</source>
-        <translation type="unfinished"></translation>
+        <translation>James</translation>
     </message>
     <message>
         <source>1 Peter</source>
-        <translation type="unfinished"></translation>
+        <translation>1 Peter</translation>
     </message>
     <message>
         <source>2 Peter</source>
-        <translation type="unfinished"></translation>
+        <translation>2 Peter</translation>
     </message>
     <message>
         <source>1 John</source>
-        <translation type="unfinished"></translation>
+        <translation>1 John</translation>
     </message>
     <message>
         <source>2 John</source>
-        <translation type="unfinished"></translation>
+        <translation>2 John</translation>
     </message>
     <message>
         <source>3 John</source>
-        <translation type="unfinished"></translation>
+        <translation>3 John</translation>
     </message>
     <message>
         <source>Jude</source>
-        <translation type="unfinished"></translation>
+        <translation>Jude</translation>
     </message>
     <message>
         <source>Revelation</source>
-        <translation type="unfinished"></translation>
+        <translation>Revelation</translation>
     </message>
     <message>
         <source>Chapter No.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chapter No.</translation>
     </message>
     <message>
         <source>Verse No.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verse No.</translation>
     </message>
     <message>
         <source>Verse Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Verse Text</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Add</translation>
     </message>
 </context>
 <context>
     <name>VerseEntryWdgt</name>
     <message>
         <source>Verse Entry Widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Verse Entry Widget</translation>
     </message>
     <message>
         <source>Book</source>
-        <translation type="unfinished"></translation>
+        <translation>Book</translation>
     </message>
     <message>
         <source>Chapter</source>
-        <translation type="unfinished"></translation>
+        <translation>Chapter</translation>
     </message>
     <message>
         <source>Verse</source>
-        <translation type="unfinished"></translation>
+        <translation>Verse</translation>
     </message>
 </context>
 </TS>
