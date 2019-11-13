@@ -34,8 +34,8 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <source>My Cover</source>
-        <translation>My Cover</translation>
+        <source>Shew me thy ways, O Lord; teach me thy paths. (Ps 25:4)</source>
+        <translation>Shew me thy ways, O Lord; teach me thy paths. (Ps 25:4)</translation>
     </message>
 </context>
 <context>

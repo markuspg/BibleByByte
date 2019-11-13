@@ -3,20 +3,13 @@ import Sailfish.Silica 1.0
 
 CoverBackground {
     Label {
-        id: label
+        id: coverLabel
+
         anchors.centerIn: parent
-        text: qsTr("My Cover")
-    }
-
-    CoverActionList {
-        id: coverAction
-
-        CoverAction {
-            iconSource: "image://theme/icon-cover-next"
-        }
-
-        CoverAction {
-            iconSource: "image://theme/icon-cover-pause"
-        }
+        font.pixelSize: Theme.fontSizeLarge
+        horizontalAlignment: Text.AlignHCenter
+        text: qsTr("Shew me thy ways, O Lord; teach me thy paths. (Ps 25:4)")
+        width: parent.width
+        wrapMode: Text.WordWrap
     }
 }
