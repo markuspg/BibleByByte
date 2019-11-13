@@ -70,7 +70,7 @@ int main(int argc, char *argv[]) {
 #ifdef QML_APP
     qmlRegisterType<Backend>("com.github.biblebybyte.backend", 1, 0, "Backend");
 
-    view->setSource(SailfishApp::pathTo("qml/BibleByByte.qml"));
+    view->setSource(SailfishApp::pathTo("qml/harbour-biblebybyte.qml"));
     view->show();
 
     return app->exec();

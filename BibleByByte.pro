@@ -1,4 +1,4 @@
-TARGET = BibleByByte
+TARGET = harbour-biblebybyte
 
 CONFIG += sailfishapp c++11
 
@@ -35,16 +35,16 @@ SOURCES += \
     src/modules/songVerse/songverse.cpp \
 
 DISTFILES += \
-    BibleByByte.desktop \
-    qml/BibleByByte.qml \
+    harbour-biblebybyte.desktop \
+    qml/harbour-biblebybyte.qml \
     qml/cover/CoverPage.qml \
     qml/pages/ModeChooser.qml \
     qml/pages/VerseCheck.qml \
     qml/pages/VerseEntry.qml \
-    rpm/BibleByByte.changes.in \
-    rpm/BibleByByte.changes.run.in \
-    rpm/BibleByByte.spec \
-    rpm/BibleByByte.yaml \
+    rpm/harbour-biblebybyte.changes.in \
+    rpm/harbour-biblebybyte.changes.run.in \
+    rpm/harbour-biblebybyte.spec \
+    rpm/harbour-biblebybyte.yaml \
     translations/*.ts \
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
@@ -53,4 +53,4 @@ SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 # following CONFIG line
 CONFIG += sailfishapp_i18n
 
-TRANSLATIONS += translations/BibleByByte-de.ts
+TRANSLATIONS += translations/harbour-biblebybyte-de.ts

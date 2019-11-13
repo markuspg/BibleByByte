@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
 X-Nemo-Application-Type=silica-qt5
-Icon=BibleByByte
-Exec=BibleByByte
+Icon=harbour-biblebybyte
+Exec=harbour-biblebybyte
 Name=BibleByByte
 # translation example:
 # your app name in German locale (de)
