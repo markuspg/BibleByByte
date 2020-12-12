@@ -1,6 +1,6 @@
 TARGET = harbour-biblebybyte
 
-CONFIG += sailfishapp c++11
+CONFIG += sailfishapp
 
 DEFINES += QML_APP
 
