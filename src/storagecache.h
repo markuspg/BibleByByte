@@ -33,13 +33,11 @@ public:
     struct DrawResult {
         constexpr DrawResult(EModIds argMod, ll::Level argLvlIdx,
                              ll::ItemQty argItemIdx) :
-            mod{argMod},
-            lvlIdx{argLvlIdx},
-            itemIdx{argItemIdx}
+            mod{argMod}, lvlIdx{argLvlIdx}, itemIdx{argItemIdx}
         {
         }
-        DrawResult(const DrawResult &argDrawRes) = default;
-        DrawResult(DrawResult &&argDrawRes) = default;
+        DrawResult(const DrawResult& argDrawRes) = default;
+        DrawResult(DrawResult&& argDrawRes) = default;
 
         const EModIds mod;
         const ll::Level lvlIdx;
@@ -61,7 +59,9 @@ public:
 
 #ifdef CACHE_TEST
     ll::ItemQty GetItemQty(EModIds argItemsMod, ll::Level argItemsLvl) const
-            { return itemsPerModPerLvl.at(argItemsMod).at(argItemsLvl); }
+    {
+        return itemsPerModPerLvl.at(argItemsMod).at(argItemsLvl);
+    }
 #endif
 
 private:

@@ -20,9 +20,9 @@
 #ifndef BBB_VERSE_H
 #define BBB_VERSE_H
 
-#include "booktitles.h"
 #include "../../abstractdatatype.h"
 #include "../../global_definitions.h"
+#include "booktitles.h"
 
 #include <limits>
 
@@ -32,10 +32,10 @@ class Verse : public AbstractDataType
 {
 public:
     Verse(const int argBookIdx, unsigned short argChapterNo,
-          unsigned short argVerseNo, const QString &argText,
+          unsigned short argVerseNo, const QString& argText,
           ll::Level argCurrLvl);
     Verse(BookTitleInfoPtr argBook, unsigned short argChapterNo,
-          unsigned short argVerseNo, const QString &argText,
+          unsigned short argVerseNo, const QString& argText,
           ll::Level argCurrLvl);
 
     QString GetBook() const;
@@ -51,7 +51,6 @@ private:
     const ll::Level currLvl = std::numeric_limits<ll::Level>::max();
     const unsigned short verseNo = std::numeric_limits<unsigned short>::max();
     const QString text;
-
 };
 
 #endif // BBB_VERSE_H

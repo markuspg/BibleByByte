@@ -30,28 +30,26 @@
 
 struct ConfOpt {
     constexpr ConfOpt(ConfigurationHandler::EConfigValues argEnumVal,
-                      const char *argName, const char *argDefaultVal) noexcept :
-        defaultVal{argDefaultVal},
-        enumVal{argEnumVal},
-        name{argName}
+                      const char* argName, const char* argDefaultVal) noexcept :
+        defaultVal{argDefaultVal}, enumVal{argEnumVal}, name{argName}
     {
     }
 
-    const char *const defaultVal = nullptr;
+    const char* const defaultVal = nullptr;
     const ConfigurationHandler::EConfigValues enumVal
         = ConfigurationHandler::EConfigValues::AAA_INVALID;
-    const char * const name = nullptr;
+    const char* const name = nullptr;
 };
 
 constexpr std::array<ConfOpt, 2> configOpts{
-            ConfOpt{ConfigurationHandler::EConfigValues::ACTIVE_MODULES,
-                    "active_modules", "BibleVerse"},
-            ConfOpt{ConfigurationHandler::EConfigValues::STORAGE_BACKEND,
-                    "storage_backend", "file"}};
+    ConfOpt{ConfigurationHandler::EConfigValues::ACTIVE_MODULES,
+            "active_modules", "BibleVerse"},
+    ConfOpt{ConfigurationHandler::EConfigValues::STORAGE_BACKEND,
+            "storage_backend", "file"}};
 
 // ConfigurationHandler --------------------------------------------------------
 
-ConfigurationHandler::ConfigurationHandler(QObject *const argParent) :
+ConfigurationHandler::ConfigurationHandler(QObject* const argParent) :
     QObject{argParent}
 {
     if (ReadConfigFile() == false) {
@@ -59,19 +57,20 @@ ConfigurationHandler::ConfigurationHandler(QObject *const argParent) :
     }
 }
 
-QString ConfigurationHandler::GetConfigValue(
-        const EConfigValues argConfVal) const
+QString
+    ConfigurationHandler::GetConfigValue(const EConfigValues argConfVal) const
 {
     // find the configuration option belonging to the enum value
     const auto res = std::find_if(configOpts.cbegin(), configOpts.cend(),
-                                  [argConfVal](const ConfOpt &argOptData){
+                                  [argConfVal](const ConfOpt& argOptData) {
                                       return argOptData.enumVal == argConfVal;
                                   });
 
     // throw an exception if the enum value could not be found
     if (res == configOpts.cend()) {
         qWarning() << "Queried config option"
-                   << static_cast<std::underlying_type<EConfigValues>::type>(argConfVal)
+                   << static_cast<std::underlying_type<EConfigValues>::type>(
+                          argConfVal)
                    << "seems not to exist";
         throw ConfigException{};
     }
@@ -79,9 +78,11 @@ QString ConfigurationHandler::GetConfigValue(
     return optsAndVals.at(res->name);
 }
 
-bool ConfigurationHandler::ReadConfigFile() {
-    const QString configFilePath{QStandardPaths::writableLocation(
-                    QStandardPaths::AppDataLocation) + "/" + configFileName};
+bool ConfigurationHandler::ReadConfigFile()
+{
+    const QString configFilePath{
+        QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/"
+        + configFileName};
 
     QFile confFile{configFilePath};
     // create the configuration file if it does not exist yet
@@ -121,8 +122,7 @@ bool ConfigurationHandler::ReadConfigFile() {
         }
 
         // error if the line does not contain a '=' and is not a comment
-        if ((confFileLine.contains('=') == false)
-                && (confFileLine[0] != '#')) {
+        if ((confFileLine.contains('=') == false) && (confFileLine[0] != '#')) {
             qWarning() << "Malformed line";
             return false;
         }
@@ -137,7 +137,7 @@ bool ConfigurationHandler::ReadConfigFile() {
     }
 
     // add default values to the map for missing options
-    for (const auto &optData : configOpts) {
+    for (const auto& optData : configOpts) {
         if (optsAndVals.find(optData.name) == optsAndVals.end()) {
             optsAndVals.emplace(optData.name, optData.defaultVal);
         }
@@ -147,18 +147,19 @@ bool ConfigurationHandler::ReadConfigFile() {
 }
 
 void ConfigurationHandler::SetConfigValue(const EConfigValues argConfVal,
-                                          const QString &argVal)
+                                          const QString& argVal)
 {
     // find the configuration option belonging to the enum value
     const auto res = std::find_if(configOpts.cbegin(), configOpts.cend(),
-                                  [argConfVal](const ConfOpt &argOptData){
+                                  [argConfVal](const ConfOpt& argOptData) {
                                       return argOptData.enumVal == argConfVal;
                                   });
 
     // throw an exception if the enum value could not be found
     if (res == configOpts.cend()) {
         qWarning() << "Config option"
-                   << static_cast<std::underlying_type<EConfigValues>::type>(argConfVal)
+                   << static_cast<std::underlying_type<EConfigValues>::type>(
+                          argConfVal)
                    << "seems not to exist";
         throw ConfigException{};
     }
@@ -170,20 +171,14 @@ void ConfigurationHandler::SetConfigValue(const EConfigValues argConfVal,
     }
 }
 
-bool ConfigurationHandler::SyncConfiguration()
-{
-    return false;
-}
+bool ConfigurationHandler::SyncConfiguration() { return false; }
 
 // ConfigurationHandler::ConfigException ---------------------------------------
 
 ConfigurationHandler::ConfigException*
-ConfigurationHandler::ConfigException::clone() const
+    ConfigurationHandler::ConfigException::clone() const
 {
     return new ConfigException{*this};
 }
 
-void ConfigurationHandler::ConfigException::raise() const
-{
-    throw *this;
-}
+void ConfigurationHandler::ConfigException::raise() const { throw *this; }

@@ -27,37 +27,33 @@
 #include <QDebug>
 #endif // QML_APP
 
-Backend::Backend(QObject *const argParent) :
+Backend::Backend(QObject* const argParent) :
     QObject(argParent),
     configHndlr(new ConfigurationHandler),
-    storageBackend(configHndlr->GetConfigValue(
-                       ConfigurationHandler::ECV::STORAGE_BACKEND) == "file"
-                   ? reinterpret_cast<AbstractStorageBackend*>(new FileStorageBackend)
-                   : reinterpret_cast<AbstractStorageBackend*>(new SqliteStorageBackend))
+    storageBackend(
+        configHndlr->GetConfigValue(ConfigurationHandler::ECV::STORAGE_BACKEND)
+                == "file"
+            ? reinterpret_cast<AbstractStorageBackend*>(new FileStorageBackend)
+            : reinterpret_cast<AbstractStorageBackend*>(
+                new SqliteStorageBackend))
 {
     configHndlr->setParent(this);
     storageBackend->setParent(this);
 
 #ifdef QML_APP
-    connect(storageBackend, &AbstractStorageBackend::DataSavingSucceeded,
-            this, &Backend::VerseGotSuccessfullySaved);
+    connect(storageBackend, &AbstractStorageBackend::DataSavingSucceeded, this,
+            &Backend::VerseGotSuccessfullySaved);
     connect(storageBackend, &AbstractStorageBackend::DataRetrievalSucceeded,
             this, &Backend::RetrieveNewVerse);
 #endif // QML_APP
 }
 
-void Backend::Initialize()
-{
-    storageBackend->RetrieveRandomData();
-}
+void Backend::Initialize() { storageBackend->RetrieveRandomData(); }
 
 #ifdef QML_APP
-void Backend::requestNextVerse()
-{
-    storageBackend->RetrieveRandomData();
-}
+void Backend::requestNextVerse() { storageBackend->RetrieveRandomData(); }
 
-void Backend::RetrieveNewVerse(const AbstractDataTypeSharedPtr &argDataPtr)
+void Backend::RetrieveNewVerse(const AbstractDataTypeSharedPtr& argDataPtr)
 {
     currDataItem = argDataPtr;
     const auto ptr = std::dynamic_pointer_cast<Verse>(currDataItem);
@@ -86,7 +82,7 @@ void Backend::RetrieveNewVerse(const AbstractDataTypeSharedPtr &argDataPtr)
 }
 
 void Backend::saveVerse(const int argBookIdx, const int argChapterNo,
-                        const int argVerseNo, const QString &argVerseText)
+                        const int argVerseNo, const QString& argVerseText)
 {
     // Filter invalid bible book indices
     if (bookTitles.size() <= static_cast<unsigned int>(argBookIdx)) {
@@ -95,16 +91,14 @@ void Backend::saveVerse(const int argBookIdx, const int argChapterNo,
 
     // Filter invalid chapter and verse numbers
     if (((argChapterNo < 1) || argChapterNo > 150)
-            || ((argVerseNo < 1) || argVerseNo > 176)) {
-        qWarning() << "Invalid chapter or verse number given:"
-                   << argChapterNo << argVerseNo;
+        || ((argVerseNo < 1) || argVerseNo > 176)) {
+        qWarning() << "Invalid chapter or verse number given:" << argChapterNo
+                   << argVerseNo;
         return;
     }
 
-    storageBackend->SaveData(
-                AbstractDataTypeSharedPtr{
-                    new Verse(argBookIdx, argChapterNo,
-                              argVerseNo, argVerseText, 0)});
+    storageBackend->SaveData(AbstractDataTypeSharedPtr{
+        new Verse(argBookIdx, argChapterNo, argVerseNo, argVerseText, 0)});
 }
 
 void Backend::VerseGotSuccessfullySaved()

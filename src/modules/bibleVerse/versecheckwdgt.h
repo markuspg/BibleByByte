@@ -27,22 +27,24 @@ namespace Ui {
 class VerseCheckWdgt;
 } // namespace Ui
 
-class VerseCheckWdgt : public AbstractCheckWdgt,
-                       public Singleton<VerseCheckWdgt>
+class VerseCheckWdgt :
+    public AbstractCheckWdgt,
+    public Singleton<VerseCheckWdgt>
 {
     Q_OBJECT
 
 public:
-    explicit VerseCheckWdgt(QWidget *argParent = nullptr);
+    explicit VerseCheckWdgt(QWidget* argParent = nullptr);
     ~VerseCheckWdgt() override;
 
-     void ShowData() override;
+    void ShowData() override;
 
 private:
-     void SetDataToCheckInternal(const AbstractDataTypeSharedPtr &argData) override;
-     void ShowCheckedDataWdgt(bool argDisplayData) override;
+    void SetDataToCheckInternal(
+        const AbstractDataTypeSharedPtr& argData) override;
+    void ShowCheckedDataWdgt(bool argDisplayData) override;
 
-    Ui::VerseCheckWdgt *const ui = nullptr;
+    Ui::VerseCheckWdgt* const ui = nullptr;
 };
 
 #endif // VERSECHECKWDGT_H

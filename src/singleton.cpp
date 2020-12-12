@@ -21,13 +21,9 @@
 
 // InstanceExistsException -----------------------------------------------------
 
-InstanceExistsException*
-InstanceExistsException::clone() const
+InstanceExistsException* InstanceExistsException::clone() const
 {
     return new InstanceExistsException{*this};
 }
 
-void InstanceExistsException::raise() const
-{
-    throw *this;
-}
+void InstanceExistsException::raise() const { throw *this; }

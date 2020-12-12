@@ -19,22 +19,17 @@
 
 #include "abstractstoragebackend.h"
 
-IOException* IOException::clone() const
-{
-    return new IOException{*this};
-}
+IOException* IOException::clone() const { return new IOException{*this}; }
 
-void IOException::raise() const
-{
-    throw *this;
-}
+void IOException::raise() const { throw *this; }
 
-AbstractStorageBackend::AbstractStorageBackend(QObject *const argParent) :
+AbstractStorageBackend::AbstractStorageBackend(QObject* const argParent) :
     QObject{argParent}
 {
 }
 
-void AbstractStorageBackend::MoveDataOneLevelDown(AbstractDataTypeSharedPtr argData)
+void AbstractStorageBackend::MoveDataOneLevelDown(
+    AbstractDataTypeSharedPtr argData)
 {
     const MoveResult res{MoveData(argData, false)};
     if (res.errorOccurred == true) {
@@ -43,14 +38,14 @@ void AbstractStorageBackend::MoveDataOneLevelDown(AbstractDataTypeSharedPtr argD
     }
 
     if (res.moveHappened == true) {
-        cache.ItemGotMoved(argData->GetType(), res.prevLevel,
-                           res.newLevel);
+        cache.ItemGotMoved(argData->GetType(), res.prevLevel, res.newLevel);
     }
 
     RetrieveRandomData();
 }
 
-void AbstractStorageBackend::MoveDataOneLevelUp(AbstractDataTypeSharedPtr argData)
+void AbstractStorageBackend::MoveDataOneLevelUp(
+    AbstractDataTypeSharedPtr argData)
 {
     const MoveResult res{MoveData(argData, true)};
     if (res.errorOccurred == true) {
@@ -59,14 +54,13 @@ void AbstractStorageBackend::MoveDataOneLevelUp(AbstractDataTypeSharedPtr argDat
     }
 
     if (res.moveHappened == true) {
-        cache.ItemGotMoved(argData->GetType(), res.prevLevel,
-                           res.newLevel);
+        cache.ItemGotMoved(argData->GetType(), res.prevLevel, res.newLevel);
     }
 
     RetrieveRandomData();
 }
 
-void AbstractStorageBackend::SaveData(const AbstractDataTypeSharedPtr &argData)
+void AbstractStorageBackend::SaveData(const AbstractDataTypeSharedPtr& argData)
 {
     if (SaveDataInternally(argData) == true) {
         cache.InsertNewItem(argData->GetType());

@@ -19,14 +19,14 @@
 
 #include "sqlitestoragebackend.h"
 
-SqliteStorageBackend::SqliteStorageBackend(QObject *const argParent) :
+SqliteStorageBackend::SqliteStorageBackend(QObject* const argParent) :
     AbstractStorageBackend{argParent}
 {
 }
 
-AbstractStorageBackend::MoveResult SqliteStorageBackend::MoveData(
-        const AbstractDataTypeSharedPtr &argData,
-        const bool argMoveLevelUp)
+AbstractStorageBackend::MoveResult
+    SqliteStorageBackend::MoveData(const AbstractDataTypeSharedPtr& argData,
+                                   const bool argMoveLevelUp)
 {
     Q_UNUSED(argData)
     Q_UNUSED(argMoveLevelUp)
@@ -35,20 +35,14 @@ AbstractStorageBackend::MoveResult SqliteStorageBackend::MoveData(
                       std::numeric_limits<ll::Level>::max()};
 }
 
-void SqliteStorageBackend::RetrieveRandomData()
-{
-    emit DataRetrievalFailed();
-}
+void SqliteStorageBackend::RetrieveRandomData() { emit DataRetrievalFailed(); }
 
 bool SqliteStorageBackend::SaveDataInternally(
-        const AbstractDataTypeSharedPtr &argData)
+    const AbstractDataTypeSharedPtr& argData)
 {
     Q_UNUSED(argData)
 
     return false;
 }
 
-bool SqliteStorageBackend::UpdateCache()
-{
-    return false;
-}
+bool SqliteStorageBackend::UpdateCache() { return false; }

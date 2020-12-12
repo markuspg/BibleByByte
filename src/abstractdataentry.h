@@ -35,8 +35,8 @@ class AbstractDataEntry : public QWidget
     Q_OBJECT
 
 public:
-    explicit AbstractDataEntry(AbstractEntryWdgt *const argEntryWdgt,
-                               QWidget *const argParent = nullptr);
+    explicit AbstractDataEntry(AbstractEntryWdgt* const argEntryWdgt,
+                               QWidget* const argParent = nullptr);
     ~AbstractDataEntry() override;
 
 public slots:
@@ -47,8 +47,8 @@ signals:
     void Req_DataSaving(AbstractDataTypeSharedPtr argData);
 
 protected:
-    AbstractEntryWdgt *const entryWdgt = nullptr;
-    Ui::AbstractDataEntry *const ui = nullptr;
+    AbstractEntryWdgt* const entryWdgt = nullptr;
+    Ui::AbstractDataEntry* const ui = nullptr;
 
 private slots:
     void OnAddButtonClicked();

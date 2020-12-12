@@ -19,7 +19,7 @@
 
 #include "abstractentrywdgt.h"
 
-AbstractEntryWdgt::AbstractEntryWdgt(QWidget *const argParent) :
+AbstractEntryWdgt::AbstractEntryWdgt(QWidget* const argParent) :
     QWidget{argParent}
 {
 }

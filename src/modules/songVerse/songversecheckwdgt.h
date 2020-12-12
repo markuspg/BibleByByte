@@ -27,22 +27,24 @@ namespace Ui {
 class SongVerseCheckWdgt;
 } // namespace Ui
 
-class SongVerseCheckWdgt : public AbstractCheckWdgt,
-                           public Singleton<SongVerseCheckWdgt>
+class SongVerseCheckWdgt :
+    public AbstractCheckWdgt,
+    public Singleton<SongVerseCheckWdgt>
 {
     Q_OBJECT
 
 public:
-    explicit SongVerseCheckWdgt(QWidget *argParent = nullptr);
+    explicit SongVerseCheckWdgt(QWidget* argParent = nullptr);
     ~SongVerseCheckWdgt() override;
 
-     void ShowData() override;
+    void ShowData() override;
 
 private:
-     void SetDataToCheckInternal(const AbstractDataTypeSharedPtr &argData) override;
-     void ShowCheckedDataWdgt(bool argDisplayData) override;
+    void SetDataToCheckInternal(
+        const AbstractDataTypeSharedPtr& argData) override;
+    void ShowCheckedDataWdgt(bool argDisplayData) override;
 
-    Ui::SongVerseCheckWdgt *const ui = nullptr;
+    Ui::SongVerseCheckWdgt* const ui = nullptr;
 };
 
 #endif // SONGVERSECHECKWDGT_H

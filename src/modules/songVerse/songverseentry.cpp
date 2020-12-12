@@ -20,7 +20,7 @@
 #include "songverseentry.h"
 #include "songverseentrywdgt.h"
 
-SongVerseEntry::SongVerseEntry(QWidget *const argParent) :
+SongVerseEntry::SongVerseEntry(QWidget* const argParent) :
     AbstractDataEntry{new SongVerseEntryWdgt, argParent}
 {
 }

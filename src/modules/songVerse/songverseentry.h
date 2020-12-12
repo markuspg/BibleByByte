@@ -23,13 +23,14 @@
 #include "../../abstractdataentry.h"
 #include "../../singleton.h"
 
-class SongVerseEntry : public AbstractDataEntry,
-                       public Singleton<SongVerseEntry>
+class SongVerseEntry :
+    public AbstractDataEntry,
+    public Singleton<SongVerseEntry>
 {
     Q_OBJECT
 
 public:
-    explicit SongVerseEntry(QWidget *argParent = nullptr);
+    explicit SongVerseEntry(QWidget* argParent = nullptr);
 };
 
 #endif // VERSEENTRY_H

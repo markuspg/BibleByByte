@@ -20,16 +20,13 @@
 #include "helpers.h"
 
 constexpr ModNamesArr moduleNames{
-            std::make_pair(EModIds::BibleVerse, "BibleVerse")};
-            // TODO(markuspg) re-enable this in a later version
-            // std::make_pair(EModIds::SongVerse, "SongVerse"));
+    std::make_pair(EModIds::BibleVerse, "BibleVerse")};
+// TODO(markuspg) re-enable this in a later version
+// std::make_pair(EModIds::SongVerse, "SongVerse"));
 
-const char * GetModuleNameById(const EModIds argId)
+const char* GetModuleNameById(const EModIds argId)
 {
     return moduleNames.at(static_cast<ModNamesArr::size_type>(argId)).second;
 }
 
-const ModNamesArr& GetModuleNames()
-{
-    return moduleNames;
-}
+const ModNamesArr& GetModuleNames() { return moduleNames; }

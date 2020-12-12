@@ -23,13 +23,12 @@
 #include "../../abstractdatachecker.h"
 #include "../../singleton.h"
 
-class VerseChecker : public AbstractDataChecker,
-                     public Singleton<VerseChecker>
+class VerseChecker : public AbstractDataChecker, public Singleton<VerseChecker>
 {
     Q_OBJECT
 
 public:
-    explicit VerseChecker(QWidget *const argParent = nullptr);
+    explicit VerseChecker(QWidget* const argParent = nullptr);
 };
 
 #endif // VERSECHECKER_H

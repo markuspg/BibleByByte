@@ -17,11 +17,11 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "verse.h"
 #include "versechecker.h"
+#include "verse.h"
 #include "versecheckwdgt.h"
 
-VerseChecker::VerseChecker(QWidget *const argParent) :
+VerseChecker::VerseChecker(QWidget* const argParent) :
     AbstractDataChecker{new VerseCheckWdgt, argParent}
 {
 }

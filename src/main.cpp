@@ -46,7 +46,8 @@
 #endif // WIDGETS_APP
 #include "modules/bibleVerse/booktitles.h"
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[])
+{
 #ifdef WIDGETS_APP
     QApplication app{argc, argv};
     app.setApplicationName("BibleByByte");
@@ -59,7 +60,8 @@ int main(int argc, char *argv[]) {
     qRegisterMetaType<AbstractDataTypeSharedPtr>();
     qRegisterMetaType<BookTitleInfoPtr>();
 
-    QDir dataDir{QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)};
+    QDir dataDir{
+        QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)};
     if (QFile::exists(dataDir.absolutePath()) == false) {
         if (dataDir.mkpath(dataDir.absolutePath()) == false) {
             qWarning() << "Failed to create data directory";

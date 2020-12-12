@@ -23,7 +23,7 @@
 #include <QObject>
 
 Verse::Verse(const int argBookIdx, const unsigned short argChapterNo,
-             const unsigned short argVerseNo, const QString &argText,
+             const unsigned short argVerseNo, const QString& argText,
              const ll::Level argCurrLvl) :
     AbstractDataType{EModIds::BibleVerse},
     book{&(bookTitles.at(static_cast<BookTitleInfos::size_type>(argBookIdx)))},
@@ -35,7 +35,7 @@ Verse::Verse(const int argBookIdx, const unsigned short argChapterNo,
 }
 
 Verse::Verse(const BookTitleInfoPtr argBook, const unsigned short argChapterNo,
-             const unsigned short argVerseNo, const QString &argText,
+             const unsigned short argVerseNo, const QString& argText,
              const ll::Level argCurrLvl) :
     AbstractDataType{EModIds::BibleVerse},
     book{argBook},
@@ -55,14 +55,10 @@ QString Verse::GetBook() const
     return QObject::tr(book->prettyTitle);
 }
 
-QByteArray Verse::GetData() const
-{
-    return text.toUtf8();
-}
+QByteArray Verse::GetData() const { return text.toUtf8(); }
 
 QString Verse::GetIdentifier() const
 {
-    return QString{book->technicalTitle}
-            + "_" + QString::number(chapterNo)
-            + "-" + QString::number(verseNo);
+    return QString{book->technicalTitle} + "_" + QString::number(chapterNo)
+           + "-" + QString::number(verseNo);
 }

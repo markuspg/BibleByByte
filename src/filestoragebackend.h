@@ -23,21 +23,22 @@
 #include "abstractstoragebackend.h"
 #include "singleton.h"
 
-class FileStorageBackend : public AbstractStorageBackend,
-                           public Singleton<FileStorageBackend>
+class FileStorageBackend :
+    public AbstractStorageBackend,
+    public Singleton<FileStorageBackend>
 {
     Q_OBJECT
 
 public:
-    explicit FileStorageBackend(QObject *const argParent = nullptr);
+    explicit FileStorageBackend(QObject* const argParent = nullptr);
 
 public slots:
     void RetrieveRandomData() override;
-    bool SaveDataInternally(const AbstractDataTypeSharedPtr &argData) override;
+    bool SaveDataInternally(const AbstractDataTypeSharedPtr& argData) override;
 
 protected:
-    MoveResult MoveData(const AbstractDataTypeSharedPtr &argData,
-                                 bool argMoveLevelUp) override;
+    MoveResult MoveData(const AbstractDataTypeSharedPtr& argData,
+                        bool argMoveLevelUp) override;
     bool UpdateCache() override;
 };
 

@@ -20,26 +20,22 @@
 #include "verseentrywdgt.h"
 #include "ui_verseentrywdgt.h"
 
-VerseEntryWdgt::VerseEntryWdgt(QWidget *const argParent) :
-    AbstractEntryWdgt{argParent},
-    ui{new Ui::VerseEntryWdgt}
+VerseEntryWdgt::VerseEntryWdgt(QWidget* const argParent) :
+    AbstractEntryWdgt{argParent}, ui{new Ui::VerseEntryWdgt}
 {
     ui->setupUi(this);
 
-    for (const auto &bookData : bookTitles) {
+    for (const auto& bookData : bookTitles) {
         QVariant tmpData;
         tmpData.setValue(&bookData);
         ui->CBBibleBook->addItem(tr(bookData.prettyTitle), tmpData);
     }
 
-    connect(ui->PTEVerseText, &QPlainTextEdit::textChanged,
-            this, &VerseEntryWdgt::OnDataChanged);
+    connect(ui->PTEVerseText, &QPlainTextEdit::textChanged, this,
+            &VerseEntryWdgt::OnDataChanged);
 }
 
-VerseEntryWdgt::~VerseEntryWdgt()
-{
-    delete ui;
-}
+VerseEntryWdgt::~VerseEntryWdgt() { delete ui; }
 
 void VerseEntryWdgt::ClearAndPrepare()
 {

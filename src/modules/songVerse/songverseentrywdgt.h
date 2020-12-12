@@ -20,28 +20,29 @@
 #ifndef SONGVERSEENTRYWDGT_H
 #define SONGVERSEENTRYWDGT_H
 
-#include "songverse.h"
 #include "../../abstractentrywdgt.h"
 #include "../../singleton.h"
+#include "songverse.h"
 
 namespace Ui {
 class SongVerseEntryWdgt;
 } // namespace Ui
 
-class SongVerseEntryWdgt : public AbstractEntryWdgt,
-                           public Singleton<SongVerseEntryWdgt>
+class SongVerseEntryWdgt :
+    public AbstractEntryWdgt,
+    public Singleton<SongVerseEntryWdgt>
 {
     Q_OBJECT
 
 public:
-    explicit SongVerseEntryWdgt(QWidget *argParent = nullptr);
+    explicit SongVerseEntryWdgt(QWidget* argParent = nullptr);
     ~SongVerseEntryWdgt() override;
 
     void ClearAndPrepare() override;
     AbstractDataTypeSharedPtr GetDataPr() override;
 
 private:
-    Ui::SongVerseEntryWdgt *const ui = nullptr;
+    Ui::SongVerseEntryWdgt* const ui = nullptr;
 
 private slots:
     void OnDataChanged();

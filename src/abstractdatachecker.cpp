@@ -17,14 +17,14 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "abstractcheckwdgt.h"
 #include "abstractdatachecker.h"
+#include "abstractcheckwdgt.h"
 #include "ui_abstractdatachecker.h"
 
 #include <QtDebug>
 
-AbstractDataChecker::AbstractDataChecker(AbstractCheckWdgt *const argDisplayWdgt,
-                                         QWidget *const argParent) :
+AbstractDataChecker::AbstractDataChecker(
+    AbstractCheckWdgt* const argDisplayWdgt, QWidget* const argParent) :
     QWidget{argParent},
     displayWdgt{argDisplayWdgt},
     ui{new Ui::AbstractDataChecker}
@@ -33,16 +33,13 @@ AbstractDataChecker::AbstractDataChecker(AbstractCheckWdgt *const argDisplayWdgt
 
     ui->VLAbstractDataChecker->insertWidget(0, displayWdgt);
 
-    connect(ui->PBCorrect, &QPushButton::clicked,
-            this, &AbstractDataChecker::OnPBCorrectClicked);
-    connect(ui->PBWrong, &QPushButton::clicked,
-            this, &AbstractDataChecker::OnPBWrongClicked);
+    connect(ui->PBCorrect, &QPushButton::clicked, this,
+            &AbstractDataChecker::OnPBCorrectClicked);
+    connect(ui->PBWrong, &QPushButton::clicked, this,
+            &AbstractDataChecker::OnPBWrongClicked);
 }
 
-AbstractDataChecker::~AbstractDataChecker()
-{
-    delete ui;
-}
+AbstractDataChecker::~AbstractDataChecker() { delete ui; }
 
 void AbstractDataChecker::DataLevelUpdateFailed()
 {
@@ -68,7 +65,8 @@ void AbstractDataChecker::OnPBWrongClicked()
     }
 }
 
-void AbstractDataChecker::SetDataToCheck(const AbstractDataTypeSharedPtr &argData)
+void AbstractDataChecker::SetDataToCheck(
+    const AbstractDataTypeSharedPtr& argData)
 {
     currentlyCheckedData = argData;
 

@@ -17,27 +17,23 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "versecheckwdgt.h"
 #include "ui_versecheckwdgt.h"
 #include "verse.h"
-#include "versecheckwdgt.h"
 
 #include <QDebug>
 
-VerseCheckWdgt::VerseCheckWdgt(QWidget *const argParent) :
-    AbstractCheckWdgt{argParent},
-    ui{new Ui::VerseCheckWdgt}
+VerseCheckWdgt::VerseCheckWdgt(QWidget* const argParent) :
+    AbstractCheckWdgt{argParent}, ui{new Ui::VerseCheckWdgt}
 {
     ui->setupUi(this);
     ui->PTEVerseText->hide();
 }
 
-VerseCheckWdgt::~VerseCheckWdgt()
-{
-    delete ui;
-}
+VerseCheckWdgt::~VerseCheckWdgt() { delete ui; }
 
 void VerseCheckWdgt::SetDataToCheckInternal(
-        const AbstractDataTypeSharedPtr &argData)
+    const AbstractDataTypeSharedPtr& argData)
 {
     const auto verseData = std::dynamic_pointer_cast<Verse>(argData);
     if (!verseData) {
@@ -59,7 +55,4 @@ void VerseCheckWdgt::ShowCheckedDataWdgt(const bool argDisplayData)
     }
 }
 
-void VerseCheckWdgt::ShowData()
-{
-    ShowCheckedDataWdgt(true);
-}
+void VerseCheckWdgt::ShowData() { ShowCheckedDataWdgt(true); }

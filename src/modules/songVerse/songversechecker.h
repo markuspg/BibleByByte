@@ -23,13 +23,14 @@
 #include "../../abstractdatachecker.h"
 #include "../../singleton.h"
 
-class SongVerseChecker : public AbstractDataChecker,
-                         public Singleton<SongVerseChecker>
+class SongVerseChecker :
+    public AbstractDataChecker,
+    public Singleton<SongVerseChecker>
 {
     Q_OBJECT
 
 public:
-    explicit SongVerseChecker(QWidget *argParent = nullptr);
+    explicit SongVerseChecker(QWidget* argParent = nullptr);
 };
 
 #endif // SONGVERSECHECKER_H

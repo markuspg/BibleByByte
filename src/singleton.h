@@ -34,18 +34,22 @@ class InstanceExistsException : public QException
 
 // Singleton -------------------------------------------------------------------
 
-template<typename T>
-class Singleton
+template <typename T> class Singleton
 {
 public:
-    Singleton() { if (instanceExists.test_and_set()) { throw  InstanceExistsException{}; } }
+    Singleton()
+    {
+        if (instanceExists.test_and_set()) {
+            throw InstanceExistsException{};
+        }
+    }
     ~Singleton() { instanceExists.clear(); }
 
 private:
     static std::atomic_flag instanceExists;
 };
 
-template<typename T>
+template <typename T>
 std::atomic_flag Singleton<T>::instanceExists = ATOMIC_FLAG_INIT;
 
 #endif // BBB_SINGLETON_H

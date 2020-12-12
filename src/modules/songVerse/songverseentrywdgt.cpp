@@ -20,22 +20,18 @@
 #include "songverseentrywdgt.h"
 #include "ui_songverseentrywdgt.h"
 
-SongVerseEntryWdgt::SongVerseEntryWdgt(QWidget *const argParent) :
-    AbstractEntryWdgt{argParent},
-    ui{new Ui::SongVerseEntryWdgt}
+SongVerseEntryWdgt::SongVerseEntryWdgt(QWidget* const argParent) :
+    AbstractEntryWdgt{argParent}, ui{new Ui::SongVerseEntryWdgt}
 {
     ui->setupUi(this);
 
     // TODO(markuspg) fill CBSongName with already known songs
 
-    connect(ui->PTEVerseText, &QPlainTextEdit::textChanged,
-            this, &SongVerseEntryWdgt::OnDataChanged);
+    connect(ui->PTEVerseText, &QPlainTextEdit::textChanged, this,
+            &SongVerseEntryWdgt::OnDataChanged);
 }
 
-SongVerseEntryWdgt::~SongVerseEntryWdgt()
-{
-    delete ui;
-}
+SongVerseEntryWdgt::~SongVerseEntryWdgt() { delete ui; }
 
 void SongVerseEntryWdgt::ClearAndPrepare()
 {

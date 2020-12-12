@@ -29,16 +29,21 @@ class AbstractCheckWdgt : public QWidget
     Q_OBJECT
 
 public:
-    explicit AbstractCheckWdgt(QWidget *argParent = nullptr);
+    explicit AbstractCheckWdgt(QWidget* argParent = nullptr);
 
-    void SetDataToCheck(const AbstractDataTypeSharedPtr &argData);
+    void SetDataToCheck(const AbstractDataTypeSharedPtr& argData);
     virtual void ShowData() = 0;
 
 protected:
-    virtual void SetDataToCheckInternal(const AbstractDataTypeSharedPtr &argData) = 0;
+    virtual void
+        SetDataToCheckInternal(const AbstractDataTypeSharedPtr& argData)
+        = 0;
     /*!
-     * \brief ShowCheckedDataWdgt shows or hides the widget containing the data in question
-     * \param argDisplayData True, if the widget shall be visible, false otherwise
+     * \brief ShowCheckedDataWdgt shows or hides the widget containing the data
+     * in question
+     *
+     * \param argDisplayData True, if the widget shall be visible, false
+     * otherwise
      */
     virtual void ShowCheckedDataWdgt(bool argDisplayData) = 0;
 };

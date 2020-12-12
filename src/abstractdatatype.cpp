@@ -29,8 +29,8 @@ AbstractDataType::AbstractDataType(const EModIds argType) noexcept :
 }
 
 AbstractDataTypeSharedPtr AbstractDataType::ParseFromData(
-        const EModIds argMod, const ll::Level argLevel,
-        const QString &argIdentifier, const QByteArray &argData)
+    const EModIds argMod, const ll::Level argLevel,
+    const QString& argIdentifier, const QByteArray& argData)
 {
     if (argMod == EModIds::BibleVerse) {
         // Retrieve the index of the book and its info structure
@@ -46,7 +46,7 @@ AbstractDataTypeSharedPtr AbstractDataType::ParseFromData(
         // Split everything after the technical title to get chapter and verse
         const QString technicalTitle{bookTitles.at(bookIdx).technicalTitle};
         const QStringList splitRes{argIdentifier.mid(technicalTitle.size() + 1)
-                                   .split(QRegularExpression{"[-]"})};
+                                       .split(QRegularExpression{"[-]"})};
         if (splitRes.size() != 2) {
             qWarning() << "Invalid identifier passed into Verse parser";
             return AbstractDataTypeSharedPtr{};
@@ -67,7 +67,7 @@ AbstractDataTypeSharedPtr AbstractDataType::ParseFromData(
         const QString verseText{QString{argData}};
 
         return std::make_shared<Verse>(bookTitleInfoPtr, chapterNo, verseNo,
-                                          argData, argLevel);
+                                       argData, argLevel);
     } else {
         qWarning() << "Invalid module passed for data type parsing";
         return AbstractDataTypeSharedPtr{};

@@ -21,26 +21,21 @@
 #include "abstractentrywdgt.h"
 #include "ui_abstractdataentry.h"
 
-AbstractDataEntry::AbstractDataEntry(AbstractEntryWdgt *const argEntryWdgt,
-                                     QWidget *const argParent) :
-    QWidget{argParent},
-    entryWdgt{argEntryWdgt},
-    ui{new Ui::AbstractDataEntry}
+AbstractDataEntry::AbstractDataEntry(AbstractEntryWdgt* const argEntryWdgt,
+                                     QWidget* const argParent) :
+    QWidget{argParent}, entryWdgt{argEntryWdgt}, ui{new Ui::AbstractDataEntry}
 {
     ui->setupUi(this);
-    connect(ui->PBAdd, &QPushButton::clicked,
-            this, &AbstractDataEntry::OnAddButtonClicked);
+    connect(ui->PBAdd, &QPushButton::clicked, this,
+            &AbstractDataEntry::OnAddButtonClicked);
 
     entryWdgt->setParent(this);
-    connect(entryWdgt, &AbstractEntryWdgt::DataComplete,
-            this, &AbstractDataEntry::OnDataComplete);
+    connect(entryWdgt, &AbstractEntryWdgt::DataComplete, this,
+            &AbstractDataEntry::OnDataComplete);
     ui->VLAbstractDataEntry->insertWidget(0, entryWdgt);
 }
 
-AbstractDataEntry::~AbstractDataEntry()
-{
-    delete ui;
-}
+AbstractDataEntry::~AbstractDataEntry() { delete ui; }
 
 void AbstractDataEntry::OnAddButtonClicked()
 {
@@ -50,10 +45,7 @@ void AbstractDataEntry::OnAddButtonClicked()
     emit Req_DataSaving(entryWdgt->GetDataPr());
 }
 
-void AbstractDataEntry::OnDataComplete()
-{
-    ui->PBAdd->setEnabled(true);
-}
+void AbstractDataEntry::OnDataComplete() { ui->PBAdd->setEnabled(true); }
 
 void AbstractDataEntry::OnDataSavingFailed()
 {

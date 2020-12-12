@@ -29,8 +29,8 @@
 class SongVerse : public AbstractDataType
 {
 public:
-    SongVerse(const QString &argSongName, unsigned short argSongVerseNo,
-              const QString &argSongVerseText);
+    SongVerse(const QString& argSongName, unsigned short argSongVerseNo,
+              const QString& argSongVerseText);
 
     QByteArray GetData() const override { return songVerseText.toUtf8(); }
     QString GetIdentifier() const override;

@@ -19,9 +19,9 @@
 
 #include "songverse.h"
 
-SongVerse::SongVerse(const QString &argSongName,
+SongVerse::SongVerse(const QString& argSongName,
                      const unsigned short argSongVerseNo,
-                     const QString &argSongVerseText) :
+                     const QString& argSongVerseText) :
     AbstractDataType{EModIds::SongVerse},
     songName{argSongName},
     songVerseNo{argSongVerseNo},

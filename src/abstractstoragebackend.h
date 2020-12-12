@@ -39,13 +39,13 @@ class AbstractStorageBackend : public QObject
     Q_OBJECT
 
 public:
-    explicit AbstractStorageBackend(QObject *const argParent = nullptr);
+    explicit AbstractStorageBackend(QObject* const argParent = nullptr);
 
 public slots:
     void MoveDataOneLevelDown(AbstractDataTypeSharedPtr argData);
     void MoveDataOneLevelUp(AbstractDataTypeSharedPtr argData);
     virtual void RetrieveRandomData() = 0;
-    void SaveData(const AbstractDataTypeSharedPtr &argData);
+    void SaveData(const AbstractDataTypeSharedPtr& argData);
 
 signals:
     void DataMovingFailed();
@@ -56,35 +56,38 @@ signals:
 
 protected:
     struct MoveResult {
-        constexpr MoveResult(bool argErrorHappened,
-                             bool argMoveHappened,
+        constexpr MoveResult(bool argErrorHappened, bool argMoveHappened,
                              ll::Level argNewLevel,
                              ll::Level argPrevLevel) noexcept :
             errorOccurred{argErrorHappened},
             moveHappened{argMoveHappened},
             newLevel{argNewLevel},
             prevLevel{argPrevLevel}
-        {}
+        {
+        }
 
         const bool errorOccurred = true;
         const bool moveHappened = false;
         // TODO(markuspg) Replace by std::optional as soon as C++17 is permitted
-        const ll::Level newLevel
-            = std::numeric_limits<ll::Level>::max();
+        const ll::Level newLevel = std::numeric_limits<ll::Level>::max();
         // TODO(markuspg) Replace by std::optional as soon as C++17 is permitted
-        const ll::Level prevLevel
-            = std::numeric_limits<ll::Level>::max();
+        const ll::Level prevLevel = std::numeric_limits<ll::Level>::max();
     };
 
     /*!
      * \brief MoveData moves the data item a category up or down
+     *
      * \param[in] argData The data item which shall be moved
-     * \param[in] argMoveLevelUp True, if the data item shall be moved up, false otherwise
-     * \return A MoveResult instance signalling the function's taken actions
+     * \param[in] argMoveLevelUp True, if the data item shall be moved up, false
+     * otherwise
+     * \return A MoveResult instance signalling the function's taken
+     * actions
      */
-    virtual MoveResult MoveData(const AbstractDataTypeSharedPtr &argData,
-                                bool argMoveLevelUp) = 0;
-    virtual bool SaveDataInternally(const AbstractDataTypeSharedPtr &argData) = 0;
+    virtual MoveResult MoveData(const AbstractDataTypeSharedPtr& argData,
+                                bool argMoveLevelUp)
+        = 0;
+    virtual bool SaveDataInternally(const AbstractDataTypeSharedPtr& argData)
+        = 0;
     virtual bool UpdateCache() = 0;
 
     StorageCache cache;

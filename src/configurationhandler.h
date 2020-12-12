@@ -24,8 +24,9 @@
 
 #include <QObject>
 
-class ConfigurationHandler : public QObject,
-                             public Singleton<ConfigurationHandler>
+class ConfigurationHandler :
+    public QObject,
+    public Singleton<ConfigurationHandler>
 {
     Q_OBJECT
 
@@ -38,10 +39,10 @@ public:
     };
     using ECV = EConfigValues;
 
-    explicit ConfigurationHandler(QObject *const argParent = nullptr);
+    explicit ConfigurationHandler(QObject* const argParent = nullptr);
 
     QString GetConfigValue(const EConfigValues argConfVal) const;
-    void SetConfigValue(const EConfigValues argConfVal, const QString &argVal);
+    void SetConfigValue(const EConfigValues argConfVal, const QString& argVal);
     bool SyncConfiguration();
 
 private:

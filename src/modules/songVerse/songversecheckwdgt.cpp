@@ -17,27 +17,23 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "songverse.h"
 #include "songversecheckwdgt.h"
+#include "songverse.h"
 #include "ui_songversecheckwdgt.h"
 
 #include <QDebug>
 
-SongVerseCheckWdgt::SongVerseCheckWdgt(QWidget *const argParent) :
-    AbstractCheckWdgt{argParent},
-    ui{new Ui::SongVerseCheckWdgt}
+SongVerseCheckWdgt::SongVerseCheckWdgt(QWidget* const argParent) :
+    AbstractCheckWdgt{argParent}, ui{new Ui::SongVerseCheckWdgt}
 {
     ui->setupUi(this);
     ui->PTESongVerseText->hide();
 }
 
-SongVerseCheckWdgt::~SongVerseCheckWdgt()
-{
-    delete ui;
-}
+SongVerseCheckWdgt::~SongVerseCheckWdgt() { delete ui; }
 
 void SongVerseCheckWdgt::SetDataToCheckInternal(
-        const AbstractDataTypeSharedPtr &argData)
+    const AbstractDataTypeSharedPtr& argData)
 {
     const auto verseData = std::dynamic_pointer_cast<SongVerse>(argData);
     if (!verseData) {
@@ -58,7 +54,4 @@ void SongVerseCheckWdgt::ShowCheckedDataWdgt(const bool argDisplayData)
     }
 }
 
-void SongVerseCheckWdgt::ShowData()
-{
-    ShowCheckedDataWdgt(true);
-}
+void SongVerseCheckWdgt::ShowData() { ShowCheckedDataWdgt(true); }

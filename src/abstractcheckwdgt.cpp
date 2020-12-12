@@ -19,12 +19,12 @@
 
 #include "abstractcheckwdgt.h"
 
-AbstractCheckWdgt::AbstractCheckWdgt(QWidget *const argParent) :
+AbstractCheckWdgt::AbstractCheckWdgt(QWidget* const argParent) :
     QWidget{argParent}
 {
 }
 
-void AbstractCheckWdgt::SetDataToCheck(const AbstractDataTypeSharedPtr &argData)
+void AbstractCheckWdgt::SetDataToCheck(const AbstractDataTypeSharedPtr& argData)
 {
     ShowCheckedDataWdgt(false);
     SetDataToCheckInternal(argData);

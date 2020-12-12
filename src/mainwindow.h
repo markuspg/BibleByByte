@@ -33,15 +33,15 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *const argParent = nullptr);
+    explicit MainWindow(QWidget* const argParent = nullptr);
     ~MainWindow() override;
 
 public slots:
     void Initialize();
 
 private:
-    Backend *const backend = nullptr;
-    Ui::MainWindow *const ui = nullptr;
+    Backend* const backend = nullptr;
+    Ui::MainWindow* const ui = nullptr;
 
 private slots:
     void OnModChanged(int argCurrentIdx);

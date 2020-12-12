@@ -41,8 +41,8 @@ public:
     inline EModIds GetType() const noexcept;
     static AbstractDataTypeSharedPtr ParseFromData(EModIds argMod,
                                                    ll::Level argLevel,
-                                                   const QString &argIdentifier,
-                                                   const QByteArray &argData);
+                                                   const QString& argIdentifier,
+                                                   const QByteArray& argData);
 
 private:
     const EModIds type;

@@ -17,11 +17,11 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "songverse.h"
 #include "songversechecker.h"
+#include "songverse.h"
 #include "songversecheckwdgt.h"
 
-SongVerseChecker::SongVerseChecker(QWidget *const argParent) :
+SongVerseChecker::SongVerseChecker(QWidget* const argParent) :
     AbstractDataChecker{new SongVerseCheckWdgt, argParent}
 {
 }
