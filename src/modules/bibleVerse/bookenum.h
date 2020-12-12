@@ -17,8 +17,8 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef BOOKENUM_H
-#define BOOKENUM_H
+#ifndef BBB_BOOKENUM_H
+#define BBB_BOOKENUM_H
 
 #include <QMetaType>
 
@@ -94,4 +94,4 @@ enum class EBibleBook : unsigned int {
 };
 Q_DECLARE_METATYPE(EBibleBook)
 
-#endif // BOOKENUM_H
+#endif // BBB_BOOKENUM_H

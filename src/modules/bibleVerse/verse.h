@@ -17,8 +17,8 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef VERSE_H
-#define VERSE_H
+#ifndef BBB_VERSE_H
+#define BBB_VERSE_H
 
 #include "booktitles.h"
 #include "../../abstractdatatype.h"
@@ -54,4 +54,4 @@ private:
 
 };
 
-#endif // VERSE_H
+#endif // BBB_VERSE_H

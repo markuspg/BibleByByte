@@ -17,8 +17,8 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef SQLITESTORAGEBACKEND_H
-#define SQLITESTORAGEBACKEND_H
+#ifndef BBB_SQLITESTORAGEBACKEND_H
+#define BBB_SQLITESTORAGEBACKEND_H
 
 #include "abstractstoragebackend.h"
 #include "singleton.h"
@@ -41,4 +41,4 @@ protected:
     bool UpdateCache() override;
 };
 
-#endif // SQLITESTORAGEBACKEND_H
+#endif // BBB_SQLITESTORAGEBACKEND_H

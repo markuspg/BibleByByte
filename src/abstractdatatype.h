@@ -17,8 +17,8 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ABSTRACTDATATYPE_H
-#define ABSTRACTDATATYPE_H
+#ifndef BBB_ABSTRACTDATATYPE_H
+#define BBB_ABSTRACTDATATYPE_H
 
 #include "global_definitions.h"
 #include "modules/helpers.h"
@@ -51,4 +51,4 @@ Q_DECLARE_METATYPE(AbstractDataTypeSharedPtr)
 
 EModIds AbstractDataType::GetType() const noexcept { return type; }
 
-#endif // ABSTRACTDATATYPE_H
+#endif // BBB_ABSTRACTDATATYPE_H

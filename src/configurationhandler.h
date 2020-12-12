@@ -17,8 +17,8 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef CONFIGURATIONHANDLER_H
-#define CONFIGURATIONHANDLER_H
+#ifndef BBB_CONFIGURATIONHANDLER_H
+#define BBB_CONFIGURATIONHANDLER_H
 
 #include "singleton.h"
 
@@ -58,4 +58,4 @@ private:
     std::map<QString, QString> optsAndVals;
 };
 
-#endif // CONFIGURATIONHANDLER_H
+#endif // BBB_CONFIGURATIONHANDLER_H

@@ -17,8 +17,8 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef FILESTORAGEBACKEND_H
-#define FILESTORAGEBACKEND_H
+#ifndef BBB_FILESTORAGEBACKEND_H
+#define BBB_FILESTORAGEBACKEND_H
 
 #include "abstractstoragebackend.h"
 #include "singleton.h"
@@ -41,4 +41,4 @@ protected:
     bool UpdateCache() override;
 };
 
-#endif // FILESTORAGEBACKEND_H
+#endif // BBB_FILESTORAGEBACKEND_H

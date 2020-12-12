@@ -17,8 +17,8 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef STORAGECACHE_H
-#define STORAGECACHE_H
+#ifndef BBB_STORAGECACHE_H
+#define BBB_STORAGECACHE_H
 
 #include "global_definitions.h"
 #include "modules/helpers.h"
@@ -70,4 +70,4 @@ private:
     std::map<EModIds, LevelQtyArr> itemsPerModPerLvl;
 };
 
-#endif // STORAGECACHE_H
+#endif // BBB_STORAGECACHE_H

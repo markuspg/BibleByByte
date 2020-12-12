@@ -17,8 +17,8 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef BACKEND_H
-#define BACKEND_H
+#ifndef BBB_BACKEND_H
+#define BBB_BACKEND_H
 
 #ifdef QML_APP
 #include "abstractdatatype.h"
@@ -91,4 +91,4 @@ private slots:
 #endif // QML_APP
 };
 
-#endif // BACKEND_H
+#endif // BBB_BACKEND_H

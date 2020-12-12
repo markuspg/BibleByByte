@@ -17,8 +17,8 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ABSTRACTSTORAGEBACKEND_H
-#define ABSTRACTSTORAGEBACKEND_H
+#ifndef BBB_ABSTRACTSTORAGEBACKEND_H
+#define BBB_ABSTRACTSTORAGEBACKEND_H
 
 #include "abstractdatatype.h"
 #include "storagecache.h"
@@ -95,4 +95,4 @@ private:
     bool noItemSavedYet = true;
 };
 
-#endif // ABSTRACTSTORAGEBACKEND_H
+#endif // BBB_ABSTRACTSTORAGEBACKEND_H

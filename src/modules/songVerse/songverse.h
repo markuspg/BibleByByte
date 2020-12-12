@@ -17,8 +17,8 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef SONGVERSE_H
-#define SONGVERSE_H
+#ifndef BBB_SONGVERSE_H
+#define BBB_SONGVERSE_H
 
 #include "../../abstractdatatype.h"
 
@@ -44,4 +44,4 @@ private:
     const QString songVerseText;
 };
 
-#endif // SONGVERSE_H
+#endif // BBB_SONGVERSE_H

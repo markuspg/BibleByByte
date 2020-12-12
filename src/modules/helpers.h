@@ -17,8 +17,8 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef HELPERS_H
-#define HELPERS_H
+#ifndef BBB_HELPERS_H
+#define BBB_HELPERS_H
 
 #include <QMetaType>
 
@@ -45,4 +45,4 @@ using ModNamesArr = std::array<std::pair<EModIds, const char *>, 1>;
 const char * GetModuleNameById(EModIds argModId);
 const ModNamesArr& GetModuleNames();
 
-#endif // HELPERS_H
+#endif // BBB_HELPERS_H

@@ -17,8 +17,8 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef SINGLETON_H
-#define SINGLETON_H
+#ifndef BBB_SINGLETON_H
+#define BBB_SINGLETON_H
 
 #include <QException>
 
@@ -48,4 +48,4 @@ private:
 template<typename T>
 std::atomic_flag Singleton<T>::instanceExists = ATOMIC_FLAG_INIT;
 
-#endif // SINGLETON_H
+#endif // BBB_SINGLETON_H

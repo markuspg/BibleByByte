@@ -17,8 +17,8 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef CONSTANTS_H
-#define CONSTANTS_H
+#ifndef BBB_CONSTANTS_H
+#define BBB_CONSTANTS_H
 
 namespace ll {
 
@@ -30,4 +30,4 @@ constexpr Level levelQty = 8;
 
 } // namespace ll
 
-#endif // CONSTANTS_H
+#endif // BBB_CONSTANTS_H

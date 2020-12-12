@@ -17,8 +17,8 @@
  *  along with BibleByByte.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef BOOKTITLES_H
-#define BOOKTITLES_H
+#ifndef BBB_BOOKTITLES_H
+#define BBB_BOOKTITLES_H
 
 #include "bookenum.h"
 
@@ -185,4 +185,4 @@ static constexpr BookTitleInfos bookTitles{
 using BookTitleInfoPtr = const BookTitleInfos::value_type*;
 Q_DECLARE_METATYPE(BookTitleInfoPtr)
 
-#endif // BOOKTITLES_H
+#endif // BBB_BOOKTITLES_H
