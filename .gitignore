@@ -1,6 +1,7 @@
 # Directories
 
 # Files
+/BibleByByte.pro.user*
 /CMakeLists.txt.user*
 /LeitnerLearner.pro.user*
 /rpm/LeitnerLearner.spec
