@@ -70,7 +70,7 @@ std::unique_ptr<StorageCache::DrawResult> StorageCache::DoMonteCarloDraw() const
 
     // choose module
     unsigned long weightedAccumulatedItems = 0ul;
-    EModIds chosenModule = EModIds::ZZZ_MOD_QTY;
+    EModIds chosenModule = EModIds::MOD_QTY;
     const ll::ItemQty partitionQty
         = static_cast<ll::ItemQty>(modDraw * totalWeightedItemQty);
     for (const std::pair<EModIds, LevelQtyArr>& modLvls : itemsPerModPerLvl) {

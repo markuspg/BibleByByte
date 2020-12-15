@@ -21,7 +21,7 @@ void StorageCacheTest::InitAndTotalTest()
     // check if exception is thrown on invalid module type
     {
     StorageCache cache;
-    QVERIFY_EXCEPTION_THROWN(cache.SetCategoryQty(EModIds::ZZZ_MOD_QTY, 0, 0),
+    QVERIFY_EXCEPTION_THROWN(cache.SetCategoryQty(EModIds::MOD_QTY, 0, 0),
                              std::out_of_range);
     }
 
@@ -159,7 +159,7 @@ void StorageCacheTest::ItemMoveTest()
     QCOMPARE(cache.GetItemQty(EModIds::BibleVerse, 7), 191);
 
     // check if the data is still valid and unchanged after a thrown exception
-    QVERIFY_EXCEPTION_THROWN(cache.ItemGotMoved(EModIds::ZZZ_MOD_QTY, 7, 1),
+    QVERIFY_EXCEPTION_THROWN(cache.ItemGotMoved(EModIds::MOD_QTY, 7, 1),
                              std::out_of_range);
     QCOMPARE(cache.GetItemQty(EModIds::BibleVerse, 1), 0);
     QCOMPARE(cache.GetItemQty(EModIds::BibleVerse, 7), 191);

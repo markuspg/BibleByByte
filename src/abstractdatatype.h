@@ -30,22 +30,47 @@
 class AbstractDataType;
 using AbstractDataTypeSharedPtr = std::shared_ptr<AbstractDataType>;
 
+/*!
+ * \brief The AbstractDataType class is the base class for all classes
+ * responsible for representing a module's data items
+ */
 class AbstractDataType
 {
 public:
-    explicit AbstractDataType(EModIds argType) noexcept;
     virtual ~AbstractDataType() = default;
 
+    /*!
+     * \brief Retrieve the instance's data converted to a byte array
+     * \return The data represented by the instance convered to a byte array
+     */
     virtual QByteArray GetData() const = 0;
+    /*!
+     * \brief Retrieve a unique identifier representing the instance's data
+     *
+     * The identifier should be able to uniquely identify the instance. For an
+     * instance of an hypothetical "Person" class this could be something like
+     * "forename_lastname_<social_security_id>". The identifier should contain
+     * no special characters (especially no '/' character) since it might be
+     * used as file name by some storage backends.
+     *
+     * \return A unique identifier representing the instance's data
+     */
     virtual QString GetIdentifier() const = 0;
+    /*!
+     * \brief Retrieve the id of the module the represented data belongs to
+     * \return The module id the represented data belongs to
+     */
     inline EModIds GetType() const noexcept;
     static AbstractDataTypeSharedPtr ParseFromData(EModIds argMod,
                                                    ll::Level argLevel,
                                                    const QString& argIdentifier,
                                                    const QByteArray& argData);
 
+protected:
+    explicit AbstractDataType(EModIds argType) noexcept;
+
 private:
-    const EModIds type;
+    const EModIds type = EModIds::INVALID;
 };
 Q_DECLARE_METATYPE(AbstractDataTypeSharedPtr)
 

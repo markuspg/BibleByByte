@@ -23,11 +23,25 @@
 #include <QDebug>
 #include <QRegularExpression>
 
+/*!
+ * \brief Initialize a new AbstractDataType instance
+ * \param[in] argType The EModIds of the module to which the represented
+ * data belongs to
+ */
 AbstractDataType::AbstractDataType(const EModIds argType) noexcept :
     type{argType}
 {
 }
 
+/*!
+ * \brief Parse binary data and return an instance of a derived class
+ * \param[in] argMod The module to which the data to be parsed belongs
+ * \param[in] argLevel The level which the parsed item belongs to
+ * \param[in] argIdentifier The unique identifier os the represented data
+ * \param[in] argData The represented data as byte array
+ * \return An AbstractDataTypeSharedPtr to the a derived data type's instance or
+ * an empty one
+ */
 AbstractDataTypeSharedPtr AbstractDataType::ParseFromData(
     const EModIds argMod, const ll::Level argLevel,
     const QString& argIdentifier, const QByteArray& argData)

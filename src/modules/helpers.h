@@ -31,12 +31,13 @@
  * program. Therefore their order should NEVER change. New module ids should be
  * added below the existing ones.
  */
-enum class EModIds {
+enum class EModIds : std::uint_fast8_t {
     BibleVerse,
     SongVerse,
 
     // this element should always be last to represent the quantity of modules
-    ZZZ_MOD_QTY
+    MOD_QTY,
+    INVALID = std::numeric_limits<std::uint_fast8_t>::max()
 };
 Q_DECLARE_METATYPE(EModIds)
 
