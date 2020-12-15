@@ -29,7 +29,7 @@ class SongVerseCheckWdgt;
 
 class SongVerseCheckWdgt :
     public AbstractCheckWdgt,
-    public Singleton<SongVerseCheckWdgt>
+    public BibleByByte::Singleton<SongVerseCheckWdgt>
 {
     Q_OBJECT
 

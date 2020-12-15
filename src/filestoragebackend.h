@@ -25,7 +25,7 @@
 
 class FileStorageBackend :
     public AbstractStorageBackend,
-    public Singleton<FileStorageBackend>
+    public BibleByByte::Singleton<FileStorageBackend>
 {
     Q_OBJECT
 

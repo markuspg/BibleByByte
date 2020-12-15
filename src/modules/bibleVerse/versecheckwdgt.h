@@ -29,7 +29,7 @@ class VerseCheckWdgt;
 
 class VerseCheckWdgt :
     public AbstractCheckWdgt,
-    public Singleton<VerseCheckWdgt>
+    public BibleByByte::Singleton<VerseCheckWdgt>
 {
     Q_OBJECT
 

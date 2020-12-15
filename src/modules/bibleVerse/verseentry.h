@@ -23,7 +23,9 @@
 #include "../../abstractdataentry.h"
 #include "../../singleton.h"
 
-class VerseEntry : public AbstractDataEntry, public Singleton<VerseEntry>
+class VerseEntry :
+    public AbstractDataEntry,
+    public BibleByByte::Singleton<VerseEntry>
 {
     Q_OBJECT
 

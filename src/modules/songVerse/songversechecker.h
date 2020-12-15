@@ -25,7 +25,7 @@
 
 class SongVerseChecker :
     public AbstractDataChecker,
-    public Singleton<SongVerseChecker>
+    public BibleByByte::Singleton<SongVerseChecker>
 {
     Q_OBJECT
 

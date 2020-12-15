@@ -26,7 +26,7 @@
 
 class ConfigurationHandler :
     public QObject,
-    public Singleton<ConfigurationHandler>
+    public BibleByByte::Singleton<ConfigurationHandler>
 {
     Q_OBJECT
 

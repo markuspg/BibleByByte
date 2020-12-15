@@ -24,8 +24,14 @@
 
 #include <atomic>
 
+namespace BibleByByte {
+
 // InstanceExistsException -----------------------------------------------------
 
+/*!
+ * \brief Exception thrown if a new Singleton instance is created while one
+ * exists already
+ */
 class InstanceExistsException : public QException
 {
     InstanceExistsException* clone() const override;
@@ -37,19 +43,33 @@ class InstanceExistsException : public QException
 template <typename T> class Singleton
 {
 public:
+    /*!
+     * \brief Destroy Singleton<T> instance and re-allow creation of new ones
+     */
+    virtual ~Singleton() { instanceExists.clear(); }
+
+protected:
+    /*!
+     * \brief Construct a new instance of Singleton<T>
+     *
+     * \exception InstanceExistsException This is thrown if a Singleton<T>
+     * instance is being constructed while another one still exists
+     */
     Singleton()
     {
         if (instanceExists.test_and_set()) {
             throw InstanceExistsException{};
         }
     }
-    ~Singleton() { instanceExists.clear(); }
 
 private:
+    //! Flag hinting if there exists a Singleton<T> instance already
     static std::atomic_flag instanceExists;
 };
 
 template <typename T>
 std::atomic_flag Singleton<T>::instanceExists = ATOMIC_FLAG_INIT;
+
+} // namespace BibleByByte
 
 #endif // BBB_SINGLETON_H

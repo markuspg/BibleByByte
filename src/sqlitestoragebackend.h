@@ -25,7 +25,7 @@
 
 class SqliteStorageBackend :
     public AbstractStorageBackend,
-    public Singleton<SqliteStorageBackend>
+    public BibleByByte::Singleton<SqliteStorageBackend>
 {
     Q_OBJECT
 

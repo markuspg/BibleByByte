@@ -30,7 +30,7 @@ class VerseEntryWdgt;
 
 class VerseEntryWdgt :
     public AbstractEntryWdgt,
-    public Singleton<VerseEntryWdgt>
+    public BibleByByte::Singleton<VerseEntryWdgt>
 {
     Q_OBJECT
 

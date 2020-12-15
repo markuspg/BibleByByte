@@ -25,7 +25,7 @@
 
 class SongVerseEntry :
     public AbstractDataEntry,
-    public Singleton<SongVerseEntry>
+    public BibleByByte::Singleton<SongVerseEntry>
 {
     Q_OBJECT
 

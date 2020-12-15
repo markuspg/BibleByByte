@@ -19,11 +19,13 @@
 
 #include "singleton.h"
 
+namespace BiByBy = BibleByByte;
+
 // InstanceExistsException -----------------------------------------------------
 
-InstanceExistsException* InstanceExistsException::clone() const
+BiByBy::InstanceExistsException* BiByBy::InstanceExistsException::clone() const
 {
     return new InstanceExistsException{*this};
 }
 
-void InstanceExistsException::raise() const { throw *this; }
+void BiByBy::InstanceExistsException::raise() const { throw *this; }

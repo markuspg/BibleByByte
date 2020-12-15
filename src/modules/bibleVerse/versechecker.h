@@ -23,7 +23,9 @@
 #include "../../abstractdatachecker.h"
 #include "../../singleton.h"
 
-class VerseChecker : public AbstractDataChecker, public Singleton<VerseChecker>
+class VerseChecker :
+    public AbstractDataChecker,
+    public BibleByByte::Singleton<VerseChecker>
 {
     Q_OBJECT
 
