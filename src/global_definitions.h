@@ -20,13 +20,15 @@
 #ifndef BBB_CONSTANTS_H
 #define BBB_CONSTANTS_H
 
+#include <cstdint>
+
 namespace ll {
 
-using ItemQty = unsigned long;
-using Level = unsigned short;
+using ItemQty = std::uint64_t;
+using Level = std::uint_fast8_t;
 
 //! The quantity of different learning levels (0=new, 7=thoroughly memorized)
-constexpr Level levelQty = 8;
+inline constexpr Level levelQty = 8;
 
 } // namespace ll
 
