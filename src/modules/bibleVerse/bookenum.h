@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Markus Prasser
+ * Copyright 2019-2020 Markus Prasser
  *
  * This file is part of BibleByByte.
  *
