@@ -31,21 +31,31 @@ class ConfigurationHandler :
     Q_OBJECT
 
 public:
-    enum class EConfigValues {
+    /*!
+     * \brief Enumeration of all available configuration options
+     */
+    enum class EConfigOptions {
+        //! Invalid enumerator
         AAA_INVALID,
 
+        //! A comma separated list of the modules which shall be enabled
         ACTIVE_MODULES,
+        //! The storage backend which shall be utilized
         STORAGE_BACKEND,
     };
-    using ECV = EConfigValues;
+    using ECV = EConfigOptions;
 
-    explicit ConfigurationHandler(QObject* const argParent = nullptr);
+    explicit ConfigurationHandler(QObject* argParent = nullptr);
 
-    QString GetConfigValue(const EConfigValues argConfVal) const;
-    void SetConfigValue(const EConfigValues argConfVal, const QString& argVal);
+    QString GetConfigValue(EConfigOptions argConfOpt) const;
+    void SetConfigValue(EConfigOptions argConfVal, const QString& argVal);
     bool SyncConfiguration();
 
 private:
+    /*!
+     * \brief Exception which is being thrown on internal errors of the
+     * ConfigurationHandler class
+     */
     class ConfigException : public QException
     {
         ConfigException* clone() const override;
@@ -54,8 +64,11 @@ private:
 
     bool ReadConfigFile();
 
-    static constexpr auto configFileName = "config.txt";
+    //! The path where the configuration file is being stored
+    const QString configFilePath;
+    //! true if the cached options have been updated and must be synced
     bool configMustBeSynced = false;
+    //! Map of the cached configuration options and their values
     std::map<QString, QString> optsAndVals;
 };
 

@@ -28,49 +28,74 @@
 
 // ConfOpt ---------------------------------------------------------------------
 
+/*!
+ * \brief Struct representing relevant data of a configuration option
+ */
 struct ConfOpt {
-    constexpr ConfOpt(ConfigurationHandler::EConfigValues argEnumVal,
+    constexpr ConfOpt(ConfigurationHandler::EConfigOptions argEnumVal,
                       const char* argName, const char* argDefaultVal) noexcept :
         defaultVal{argDefaultVal}, enumVal{argEnumVal}, name{argName}
     {
     }
 
+    //! The configuration option's default value
     const char* const defaultVal = nullptr;
-    const ConfigurationHandler::EConfigValues enumVal
-        = ConfigurationHandler::EConfigValues::AAA_INVALID;
+    //! The enumerator of the configuration option
+    const ConfigurationHandler::EConfigOptions enumVal
+        = ConfigurationHandler::EConfigOptions::AAA_INVALID;
+    //! The name of the configuration option
     const char* const name = nullptr;
 };
 
 constexpr std::array<ConfOpt, 2> configOpts{
-    ConfOpt{ConfigurationHandler::EConfigValues::ACTIVE_MODULES,
+    ConfOpt{ConfigurationHandler::EConfigOptions::ACTIVE_MODULES,
             "active_modules", "BibleVerse"},
-    ConfOpt{ConfigurationHandler::EConfigValues::STORAGE_BACKEND,
+    ConfOpt{ConfigurationHandler::EConfigOptions::STORAGE_BACKEND,
             "storage_backend", "file"}};
 
 // ConfigurationHandler --------------------------------------------------------
 
+/*!
+ * \brief Initialize a new ConfigurationHandler by reading the config file
+ *
+ * \param[in] argParent The parent QObject of the new instance
+ * \exception ConfigException If reading the configuration file fails
+ */
 ConfigurationHandler::ConfigurationHandler(QObject* const argParent) :
-    QObject{argParent}
+    QObject{argParent},
+    configFilePath{
+        QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)
+        + "/config.txt"}
 {
     if (ReadConfigFile() == false) {
         throw ConfigException{};
     }
 }
 
+/*!
+ * \brief Retrieve the value of a particular configuration option
+ *
+ * \param[in] argConfOpt An enumerator denoting the option whose value shall be
+ * queried
+ * \return The value of the configuration option if it could be retrieved
+ *
+ * \exception ConfigException If the option could not be found
+ * \exception std::out_of_range If there exists no value for the option
+ */
 QString
-    ConfigurationHandler::GetConfigValue(const EConfigValues argConfVal) const
+    ConfigurationHandler::GetConfigValue(const EConfigOptions argConfOpt) const
 {
     // find the configuration option belonging to the enum value
     const auto res = std::find_if(configOpts.cbegin(), configOpts.cend(),
-                                  [argConfVal](const ConfOpt& argOptData) {
-                                      return argOptData.enumVal == argConfVal;
+                                  [&argConfOpt](const ConfOpt& argOptData) {
+                                      return argOptData.enumVal == argConfOpt;
                                   });
 
     // throw an exception if the enum value could not be found
     if (res == configOpts.cend()) {
         qWarning() << "Queried config option"
-                   << static_cast<std::underlying_type<EConfigValues>::type>(
-                          argConfVal)
+                   << static_cast<std::underlying_type_t<EConfigOptions>>(
+                          argConfOpt)
                    << "seems not to exist";
         throw ConfigException{};
     }
@@ -78,13 +103,14 @@ QString
     return optsAndVals.at(res->name);
 }
 
+/*!
+ * \brief Read the configuration file and update the internal cache
+ * \return true on success or false otherwise
+ */
 bool ConfigurationHandler::ReadConfigFile()
 {
-    const QString configFilePath{
-        QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/"
-        + configFileName};
-
     QFile confFile{configFilePath};
+
     // create the configuration file if it does not exist yet
     if (confFile.exists() == false) {
         if (confFile.open(QIODevice::Text | QIODevice::WriteOnly) == false) {
@@ -146,7 +172,16 @@ bool ConfigurationHandler::ReadConfigFile()
     return true;
 }
 
-void ConfigurationHandler::SetConfigValue(const EConfigValues argConfVal,
+/*!
+ * \brief Set the value of a particular configuration option
+ *
+ * \param[in] argConfOpt An enumerator denoting the option whose value shall be
+ * queried
+ * \param[in] argVal The value the configuration option shall be set to
+ *
+ * \exception ConfigException If the option could not be found
+ */
+void ConfigurationHandler::SetConfigValue(const EConfigOptions argConfVal,
                                           const QString& argVal)
 {
     // find the configuration option belonging to the enum value
@@ -158,19 +193,26 @@ void ConfigurationHandler::SetConfigValue(const EConfigValues argConfVal,
     // throw an exception if the enum value could not be found
     if (res == configOpts.cend()) {
         qWarning() << "Config option"
-                   << static_cast<std::underlying_type<EConfigValues>::type>(
+                   << static_cast<std::underlying_type<EConfigOptions>::type>(
                           argConfVal)
                    << "seems not to exist";
         throw ConfigException{};
     }
 
-    if (optsAndVals.at(res->name) != argVal) {
+    if (optsAndVals[res->name] != argVal) {
         // update the configuration option's value if it got changed
         optsAndVals.at(res->name) = argVal;
         configMustBeSynced = true;
     }
 }
 
+/*!
+ * \brief Force the cached configuration values being written to storage
+ *
+ * This function is not implemented yet and returns false always.
+ *
+ * \return Always false
+ */
 bool ConfigurationHandler::SyncConfiguration() { return false; }
 
 // ConfigurationHandler::ConfigException ---------------------------------------
